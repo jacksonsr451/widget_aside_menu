@@ -19,14 +19,12 @@ class SubmenuList extends StatefulWidget {
 class _SubmenuListState extends State<SubmenuList> {
   late int? _selectedIndex;
   late int _lastIndex;
-  late bool _activatedMenu;
 
   @override
   void initState() {
     super.initState();
     _selectedIndex = null;
     _lastIndex = widget.submenu.length - 1;
-    _activatedMenu = false;
   }
 
   @override
@@ -58,7 +56,6 @@ class _SubmenuListState extends State<SubmenuList> {
                 onTap: (int tappedIndex, int? previousIndex, int? nextIndex) {
                   setState(() {
                     _selectedIndex = tappedIndex;
-                    _activatedMenu = true;
                   });
                 },
               ),
