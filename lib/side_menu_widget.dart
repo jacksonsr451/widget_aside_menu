@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:widget_aside_menu/side_menu_items.dart';
 
 class SideMenuWidget extends StatefulWidget {
-  const SideMenuWidget({Key? key}) : super(key: key);
+  final List<Map<String, Object>> menu;
+
+  const SideMenuWidget({
+    required this.menu,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SideMenuWidget> createState() => _SideMenuWidgetState();
@@ -43,15 +48,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                         isSubmenuVisible = true;
                       });
                     },
-                    listMenu: const [
-                      Icons.window,
-                      Icons.file_open,
-                      Icons.calendar_month,
-                      Icons.list,
-                      Icons.chat_bubble,
-                      Icons.contact_emergency,
-                      Icons.settings_applications,
-                    ],
+                    listMenu: widget.menu,
                   ),
                 ],
               );

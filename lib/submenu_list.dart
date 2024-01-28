@@ -3,7 +3,14 @@ import 'package:widget_aside_menu/submenu_item.dart';
 import 'package:widget_aside_menu/submenu_title.dart';
 
 class SubmenuList extends StatefulWidget {
-  const SubmenuList({Key? key}) : super(key: key);
+  final String title;
+  final List<Map<String, Object>> submenu;
+
+  const SubmenuList({
+    required this.title,
+    required this.submenu,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SubmenuList> createState() => _SubmenuListState();
@@ -17,7 +24,7 @@ class _SubmenuListState extends State<SubmenuList> {
   void initState() {
     super.initState();
     _selectedIndex = null;
-    _lastIndex = 4;
+    _lastIndex = widget.submenu.length - 1;
   }
 
   @override
@@ -25,12 +32,12 @@ class _SubmenuListState extends State<SubmenuList> {
     return Column(
       children: [
         SubmenuTitle(
-          title: "Menu",
+          title: widget.title,
           hasTopBorderRadius: _selectedIndex == 0,
         ),
         Column(
           children: List.generate(
-            5,
+            widget.submenu.length,
             (index) => Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -43,7 +50,7 @@ class _SubmenuListState extends State<SubmenuList> {
                 ),
               ),
               child: SubmenuItem(
-                title: 'Item $index',
+                title: widget.submenu[index]['title'] as String,
                 index: index,
                 selectedIndex: _selectedIndex,
                 onTap: (int tappedIndex, int? previousIndex, int? nextIndex) {

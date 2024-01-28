@@ -5,7 +5,7 @@ import 'package:widget_aside_menu/submenu_widget.dart';
 class SideMenuItems extends StatefulWidget {
   final bool isSubmenuVisible;
   final VoidCallback toggleSubmenuVisibility;
-  final List listMenu;
+  final List<Map<String, Object>> listMenu;
 
   const SideMenuItems({
     required this.isSubmenuVisible,
@@ -52,7 +52,7 @@ class _SideMenuItemsState extends State<SideMenuItems> {
                 children: List.generate(
                   widget.listMenu.length,
                   (index) => SideMenuIcon(
-                    icon: widget.listMenu[index],
+                    icon: widget.listMenu[index]['icon'] as IconData,
                     index: index,
                     isSelected: index == _selectedIndex,
                     toggleSubmenuVisibility: widget.toggleSubmenuVisibility,
@@ -66,7 +66,14 @@ class _SideMenuItemsState extends State<SideMenuItems> {
               ),
             ),
           ),
-          if (widget.isSubmenuVisible) const SubmenuWidget(),
+          if (widget.isSubmenuVisible &&
+              _selectedIndex != null &&
+              _selectedIndex! < widget.listMenu.length)
+            SubmenuWidget(
+              title: widget.listMenu[_selectedIndex!]['title'] as String,
+              submenu: widget.listMenu[_selectedIndex!]['submenus']
+                  as List<Map<String, Object>>,
+            ),
         ],
       ),
     );

@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:widget_aside_menu/submenu_list.dart';
 
 class SubmenuWidget extends StatefulWidget {
-  const SubmenuWidget({Key? key}) : super(key: key);
+  final String title;
+  final List<Map<String, Object>> submenu;
+  const SubmenuWidget({
+    required this.title,
+    required this.submenu,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SubmenuWidget> createState() => _SubmenuWidgetState();
@@ -20,7 +26,10 @@ class _SubmenuWidgetState extends State<SubmenuWidget> {
           bottomRight: Radius.circular(20.0),
         ),
       ),
-      child: const SubmenuList(),
+      child: SubmenuList(
+        title: widget.title,
+        submenu: widget.submenu,
+      ),
     );
   }
 }
