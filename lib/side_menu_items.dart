@@ -22,6 +22,12 @@ class _SideMenuItemsState extends State<SideMenuItems> {
   int? _selectedIndex;
 
   @override
+  void initState() {
+    super.initState();
+    _selectedIndex = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     double space = 1.0 * 5;
 
