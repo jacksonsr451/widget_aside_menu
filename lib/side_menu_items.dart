@@ -47,7 +47,7 @@ class _SideMenuItemsState extends State<SideMenuItems> {
               borderRadius: BorderRadius.circular(22),
             ),
             child: Container(
-              margin: const EdgeInsets.only(top: 75),
+              margin: const EdgeInsets.only(top: 70),
               child: ListView(
                 children: List.generate(
                   widget.listMenu.length,

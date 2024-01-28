@@ -21,7 +21,7 @@ class SubmenuItem extends StatefulWidget {
 class _SubmenuItemState extends State<SubmenuItem> {
   @override
   Widget build(BuildContext context) {
-    const double padding = 8;
+    const double padding = 10;
     final bool isSelected =
         widget.selectedIndex != null && widget.index == widget.selectedIndex!;
     final bool isPreviousSelected = widget.selectedIndex != null &&
