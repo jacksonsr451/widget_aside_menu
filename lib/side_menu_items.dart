@@ -53,11 +53,12 @@ class _SideMenuItemsState extends State<SideMenuItems> {
                   widget.listMenu.length,
                   (index) => SideMenuIcon(
                     icon: widget.listMenu[index],
+                    index: index,
                     isSelected: index == _selectedIndex,
                     toggleSubmenuVisibility: widget.toggleSubmenuVisibility,
-                    onTap: () {
+                    onTap: (int selectedIndex) {
                       setState(() {
-                        _selectedIndex = index;
+                        _selectedIndex = selectedIndex;
                       });
                     },
                   ),
