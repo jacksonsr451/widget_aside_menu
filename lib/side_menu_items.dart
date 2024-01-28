@@ -55,7 +55,7 @@ class _SideMenuItemsState extends State<SideMenuItems> {
                     key: ValueKey(
                       index,
                     ),
-                    icon: widget.listMenu[index]['icon'] as IconData,
+                    icon: widget.listMenu[index]['icon'] as String,
                     index: index,
                     isSelected: index == _selectedIndex,
                     toggleSubmenuVisibility: widget.toggleSubmenuVisibility,

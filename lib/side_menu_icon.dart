@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:widget_aside_menu/iconMap.dart';
 
 class SideMenuIcon extends StatefulWidget {
-  final IconData icon;
+  final String icon; // Alteração aqui para aceitar uma string
   final int index;
   final bool isSelected;
   final Function(int) onTap;
@@ -38,7 +39,8 @@ class _SideMenuIcon extends State<SideMenuIcon> {
           ),
           IconButton(
             icon: Icon(
-              widget.icon,
+              iconMap[widget
+                  .icon], // Aqui acessamos o mapa diretamente com o nome do ícone
               size: 16,
               color: const Color(0xFFECEEF0),
             ),
