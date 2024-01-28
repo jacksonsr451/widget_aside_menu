@@ -4,6 +4,7 @@ import 'package:widget_aside_menu/submenu_list.dart';
 class SubmenuWidget extends StatefulWidget {
   final String title;
   final List<Map<String, Object>> submenu;
+
   const SubmenuWidget({
     required this.title,
     required this.submenu,

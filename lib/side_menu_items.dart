@@ -22,12 +22,6 @@ class _SideMenuItemsState extends State<SideMenuItems> {
   int? _selectedIndex;
 
   @override
-  void initState() {
-    super.initState();
-    _selectedIndex = null;
-  }
-
-  @override
   Widget build(BuildContext context) {
     double space = 1.0 * 5;
 
@@ -52,6 +46,9 @@ class _SideMenuItemsState extends State<SideMenuItems> {
                 children: List.generate(
                   widget.listMenu.length,
                   (index) => SideMenuIcon(
+                    key: ValueKey(
+                      index,
+                    ),
                     icon: widget.listMenu[index]['icon'] as IconData,
                     index: index,
                     isSelected: index == _selectedIndex,
@@ -66,10 +63,9 @@ class _SideMenuItemsState extends State<SideMenuItems> {
               ),
             ),
           ),
-          if (widget.isSubmenuVisible &&
-              _selectedIndex != null &&
-              _selectedIndex! < widget.listMenu.length)
+          if (widget.isSubmenuVisible && _selectedIndex != null)
             SubmenuWidget(
+              key: ValueKey(_selectedIndex),
               title: widget.listMenu[_selectedIndex!]['title'] as String,
               submenu: widget.listMenu[_selectedIndex!]['submenus']
                   as List<Map<String, Object>>,

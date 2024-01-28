@@ -22,12 +22,16 @@ class _SubmenuItemState extends State<SubmenuItem> {
   @override
   Widget build(BuildContext context) {
     const double padding = 10;
-    final bool isSelected =
-        widget.selectedIndex != null && widget.index == widget.selectedIndex!;
-    final bool isPreviousSelected = widget.selectedIndex != null &&
-        widget.index == widget.selectedIndex! - 1;
-    final bool isNextSelected = widget.selectedIndex != null &&
-        widget.index == widget.selectedIndex! + 1;
+
+    bool isSelected = false;
+    bool isPreviousSelected = false;
+    bool isNextSelected = false;
+
+    if (widget.selectedIndex != null) {
+      isSelected = widget.index == widget.selectedIndex!;
+      isPreviousSelected = widget.index == widget.selectedIndex! - 1;
+      isNextSelected = widget.index == widget.selectedIndex! + 1;
+    }
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
