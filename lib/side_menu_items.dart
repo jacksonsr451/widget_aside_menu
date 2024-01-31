@@ -51,19 +51,24 @@ class _SideMenuItemsState extends State<SideMenuItems> {
               child: ListView(
                 children: List.generate(
                   widget.listMenu.length,
-                  (index) => SideMenuIcon(
-                    key: ValueKey(
-                      index,
-                    ),
-                    icon: widget.listMenu[index]['icon'] as String,
-                    index: index,
-                    isSelected: index == _selectedIndex,
-                    toggleSubmenuVisibility: widget.toggleSubmenuVisibility,
-                    onTap: (int selectedIndex) {
-                      setState(() {
-                        _selectedIndex = selectedIndex;
-                      });
-                    },
+                  (index) => Column(
+                    children: [
+                      SideMenuIcon(
+                        key: ValueKey(
+                          index,
+                        ),
+                        icon: widget.listMenu[index]['icon'] as String,
+                        title: widget.listMenu[index]['title'] as String,
+                        index: index,
+                        isSelected: index == _selectedIndex,
+                        toggleSubmenuVisibility: widget.toggleSubmenuVisibility,
+                        onTap: (int selectedIndex) {
+                          setState(() {
+                            _selectedIndex = selectedIndex;
+                          });
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),
