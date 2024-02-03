@@ -64,11 +64,13 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                           },
                           listMenu: widget.menu,
                         ),
-                        Column(
-                          children: [
-                            widget.appBar,
-                            widget.element,
-                          ],
+                        Expanded(
+                          child: Column(
+                            children: [
+                              widget.appBar,
+                              widget.element,
+                            ],
+                          ),
                         ),
                       ],
                     ),
