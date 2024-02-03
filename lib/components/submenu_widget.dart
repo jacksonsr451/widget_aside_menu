@@ -20,9 +20,9 @@ class _SubmenuWidgetState extends State<SubmenuWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 185,
-      decoration: const BoxDecoration(
-        color: Color(0xFF333954),
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.background,
+        borderRadius: const BorderRadius.only(
           topRight: Radius.circular(20.0),
           bottomRight: Radius.circular(20.0),
         ),

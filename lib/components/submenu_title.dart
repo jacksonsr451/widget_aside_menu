@@ -13,16 +13,16 @@ class SubmenuTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Color(0xFF333954),
-            Color(0xFF272e4b),
+            Theme.of(context).colorScheme.background,
+            Theme.of(context).colorScheme.secondary,
           ],
         ),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topRight: Radius.circular(20),
         ),
       ),
@@ -30,7 +30,7 @@ class SubmenuTitle extends StatelessWidget {
         width: 185,
         padding: const EdgeInsets.only(top: 25.00, right: 50, bottom: 25.00),
         decoration: BoxDecoration(
-          color: const Color(0xFF333954),
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.only(
             topRight: const Radius.circular(20),
             bottomRight: Radius.circular(hasTopBorderRadius ? 20.0 : 0),
@@ -39,8 +39,8 @@ class SubmenuTitle extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.end,
-          style: const TextStyle(
-            color: Color(0xFFECEEF0),
+          style: TextStyle(
+            color: Theme.of(context).textTheme.bodyLarge?.color,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),

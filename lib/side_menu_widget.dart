@@ -36,11 +36,11 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
             final shouldShowSubmenu = screenWidth > 600 || isSubmenuVisible;
 
             return Container(
-              color: const Color(0xFF303757),
+              color: Theme.of(context).colorScheme.background,
               padding: EdgeInsets.all(space),
               child: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF272e4a),
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.circular(22),
                 ),
                 child: Stack(

@@ -39,13 +39,13 @@ class _SubmenuListState extends State<SubmenuList> {
           children: List.generate(
             widget.submenu.length,
             (index) => Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Color(0xFF333954),
-                    Color(0xFF272e4b),
+                    Theme.of(context).colorScheme.background,
+                    Theme.of(context).colorScheme.primary,
                   ],
                 ),
               ),
@@ -64,19 +64,19 @@ class _SubmenuListState extends State<SubmenuList> {
         ),
         Container(
           height: 30,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xFF333954),
-                Color(0xFF272e4b),
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.primary,
               ],
             ),
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF333954),
+              color: Theme.of(context).colorScheme.background,
               borderRadius: BorderRadius.only(
                 topRight:
                     Radius.circular(_selectedIndex == _lastIndex ? 20 : 0),
