@@ -47,8 +47,9 @@ class _SubmenuItemState extends State<SubmenuItem> {
           padding:
               const EdgeInsets.only(left: 18, top: padding, bottom: padding),
           decoration: BoxDecoration(
-            color:
-                isSelected ? const Color(0xFF272e4b) : const Color(0xFF333954),
+            color: isSelected
+                ? Theme.of(context).colorScheme.tertiary
+                : Theme.of(context).colorScheme.background,
             borderRadius: isSelected
                 ? const BorderRadius.only(
                     topLeft: Radius.circular(20),
@@ -63,7 +64,9 @@ class _SubmenuItemState extends State<SubmenuItem> {
             widget.title,
             textAlign: TextAlign.left,
             style: TextStyle(
-              color: isSelected ? Colors.white : const Color(0xFFECEEF0),
+              color: isSelected
+                  ? Theme.of(context).textTheme.bodyLarge?.color
+                  : Theme.of(context).textTheme.bodySmall?.color,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),

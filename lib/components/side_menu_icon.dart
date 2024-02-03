@@ -35,7 +35,7 @@ class _SideMenuIcon extends State<SideMenuIcon> {
             margin: const EdgeInsets.only(right: 5, left: 1),
             decoration: BoxDecoration(
               color: widget.isSelected
-                  ? const Color(0xFFECEEF0)
+                  ? Theme.of(context).textTheme.bodyLarge?.color
                   : Colors.transparent,
             ),
           ),
@@ -49,7 +49,7 @@ class _SideMenuIcon extends State<SideMenuIcon> {
                   child: Icon(
                     iconMap[widget.icon],
                     size: 16,
-                    color: const Color(0xFFECEEF0),
+                    color: Theme.of(context).textTheme.bodyLarge?.color,
                   ),
                 ),
                 Container(
@@ -57,8 +57,8 @@ class _SideMenuIcon extends State<SideMenuIcon> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     widget.title,
-                    style: const TextStyle(
-                      color: Color(0xFFECEEF0),
+                    style: TextStyle(
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
                       fontSize: 5,
                     ),
                   ),

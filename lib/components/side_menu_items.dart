@@ -32,7 +32,7 @@ class _SideMenuItemsState extends State<SideMenuItems> {
     return Container(
       width: widget.isSubmenuVisible ? 245 : 60,
       decoration: BoxDecoration(
-        color: const Color(0xFF333954),
+        color: Theme.of(context).colorScheme.background,
         borderRadius: BorderRadius.circular(22),
       ),
       child: Row(
@@ -40,7 +40,7 @@ class _SideMenuItemsState extends State<SideMenuItems> {
           Container(
             width: 60,
             decoration: BoxDecoration(
-              color: const Color(0xFF494F6B),
+              color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(22),
             ),
             child: Container(
