@@ -65,11 +65,14 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                           listMenu: widget.menu,
                         ),
                         Expanded(
-                          child: Column(
-                            children: [
-                              widget.appBar,
-                              widget.element,
-                            ],
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 20),
+                            child: Column(
+                              children: [
+                                widget.appBar,
+                                widget.element,
+                              ],
+                            ),
                           ),
                         ),
                       ],
