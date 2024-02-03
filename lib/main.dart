@@ -56,7 +56,15 @@ void main() {
 
   runApp(
     MaterialApp(
-      home: Scaffold(body: SideMenuWidget(menu: menu)),
+      home: Scaffold(
+        body: SideMenuWidget(
+          menu: menu,
+          appBar: Text("Olá"),
+          element: Container(
+            child: Text("Home"),
+          ),
+        ),
+      ),
     ),
   );
 }

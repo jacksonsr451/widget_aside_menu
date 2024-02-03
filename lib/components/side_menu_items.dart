@@ -29,11 +29,8 @@ class _SideMenuItemsState extends State<SideMenuItems> {
 
   @override
   Widget build(BuildContext context) {
-    double space = 1.0 * 5;
-
     return Container(
       width: widget.isSubmenuVisible ? 245 : 60,
-      margin: EdgeInsets.only(left: space, top: space, bottom: space),
       decoration: BoxDecoration(
         color: const Color(0xFF333954),
         borderRadius: BorderRadius.circular(22),
