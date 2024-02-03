@@ -27,7 +27,7 @@ class SubmenuTitle extends StatelessWidget {
         ),
       ),
       child: Container(
-        width: 180,
+        width: 185,
         padding: const EdgeInsets.only(top: 25.00, right: 50, bottom: 25.00),
         decoration: BoxDecoration(
           color: const Color(0xFF333954),
