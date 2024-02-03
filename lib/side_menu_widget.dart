@@ -18,42 +18,40 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          setState(() {
-            isSubmenuVisible = false;
-          });
-        },
-        child: SafeArea(
-          child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              final screenWidth = constraints.maxWidth;
-              final shouldShowSubmenu = screenWidth > 600 || isSubmenuVisible;
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isSubmenuVisible = false;
+        });
+      },
+      child: SafeArea(
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            final screenWidth = constraints.maxWidth;
+            final shouldShowSubmenu = screenWidth > 600 || isSubmenuVisible;
 
-              return Stack(
-                children: [
-                  if (isSubmenuVisible)
-                    Positioned(
-                      child: Container(
-                        color: Colors.transparent,
-                        width: double.infinity,
-                        height: double.infinity,
-                      ),
+            return Stack(
+              children: [
+                if (isSubmenuVisible)
+                  Positioned(
+                    child: Container(
+                      color: Colors.transparent,
+                      width: double.infinity,
+                      height: double.infinity,
                     ),
-                  SideMenuItems(
-                    isSubmenuVisible: shouldShowSubmenu,
-                    toggleSubmenuVisibility: () {
-                      setState(() {
-                        isSubmenuVisible = true;
-                      });
-                    },
-                    listMenu: widget.menu,
                   ),
-                ],
-              );
-            },
-          ),
+                SideMenuItems(
+                  isSubmenuVisible: shouldShowSubmenu,
+                  toggleSubmenuVisibility: () {
+                    setState(() {
+                      isSubmenuVisible = true;
+                    });
+                  },
+                  listMenu: widget.menu,
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
