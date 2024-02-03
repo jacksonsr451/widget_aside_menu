@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_aside_menu/components/side_menu_widget.dart';
+import 'package:widget_aside_menu/side_menu_widget.dart';
 
 void main() {
   final List<Map<String, Object>> menu = [

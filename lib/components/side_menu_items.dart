@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_aside_menu/components/side_menu_icon.dart';
-import 'package:widget_aside_menu/submenu_widget.dart';
+import 'package:widget_aside_menu/components/submenu_widget.dart';
 
 class SideMenuItems extends StatefulWidget {
   final bool isSubmenuVisible;
