@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_aside_menu/side_menu_icon.dart';
+import 'package:widget_aside_menu/components/side_menu_icon.dart';
 import 'package:widget_aside_menu/submenu_widget.dart';
 
 class SideMenuItems extends StatefulWidget {

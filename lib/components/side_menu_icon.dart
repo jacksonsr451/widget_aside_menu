@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_aside_menu/iconMap.dart';
+import 'package:widget_aside_menu/components/iconMap.dart';
 
 class SideMenuIcon extends StatefulWidget {
   final String icon;

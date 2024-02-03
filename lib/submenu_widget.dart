@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_aside_menu/submenu_list.dart';
+import 'package:widget_aside_menu/components/submenu_list.dart';
 
 class SubmenuWidget extends StatefulWidget {
   final String title;
