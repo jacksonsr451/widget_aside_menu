@@ -65,8 +65,8 @@ class _SubmenuItemState extends State<SubmenuItem> {
             textAlign: TextAlign.left,
             style: TextStyle(
               color: isSelected
-                  ? Theme.of(context).textTheme.bodyLarge?.color
-                  : Theme.of(context).textTheme.bodySmall?.color,
+                  ? Theme.of(context).textTheme.bodySmall?.color
+                  : Theme.of(context).textTheme.bodyLarge?.color,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
