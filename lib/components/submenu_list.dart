@@ -48,8 +48,8 @@ class _SubmenuListState extends State<SubmenuList> {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Theme.of(context).colorScheme.background,
-                    Theme.of(context).colorScheme.primary,
+                    Theme.of(context).colorScheme.secondary,
+                    Theme.of(context).colorScheme.tertiary,
                   ],
                 ),
               ),
@@ -73,14 +73,14 @@ class _SubmenuListState extends State<SubmenuList> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Theme.of(context).colorScheme.background,
-                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.secondary,
+                Theme.of(context).colorScheme.tertiary,
               ],
             ),
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadius.only(
                 topRight:
                     Radius.circular(_selectedIndex == _lastIndex ? 20 : 0),

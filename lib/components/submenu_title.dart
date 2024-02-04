@@ -18,8 +18,8 @@ class SubmenuTitle extends StatelessWidget {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Theme.of(context).colorScheme.background,
             Theme.of(context).colorScheme.secondary,
+            Theme.of(context).colorScheme.tertiary,
           ],
         ),
         borderRadius: const BorderRadius.only(
@@ -30,7 +30,7 @@ class SubmenuTitle extends StatelessWidget {
         width: 185,
         padding: const EdgeInsets.only(top: 25.00, right: 50, bottom: 25.00),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.secondary,
           borderRadius: BorderRadius.only(
             topRight: const Radius.circular(20),
             bottomRight: Radius.circular(hasTopBorderRadius ? 20.0 : 0),

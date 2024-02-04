@@ -44,7 +44,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
               padding: EdgeInsets.all(space),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.tertiary,
                   borderRadius: BorderRadius.circular(22),
                 ),
                 child: Stack(

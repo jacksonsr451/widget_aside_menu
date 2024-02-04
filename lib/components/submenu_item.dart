@@ -49,7 +49,7 @@ class _SubmenuItemState extends State<SubmenuItem> {
           decoration: BoxDecoration(
             color: isSelected
                 ? Theme.of(context).colorScheme.tertiary
-                : Theme.of(context).colorScheme.background,
+                : Theme.of(context).colorScheme.secondary,
             borderRadius: isSelected
                 ? const BorderRadius.only(
                     topLeft: Radius.circular(20),
