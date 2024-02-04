@@ -40,21 +40,29 @@ class _SideMenuIcon extends State<SideMenuIcon> {
             ),
           ),
           IconButton(
+            onPressed: () {
+              widget.onTap(widget.index);
+              widget.toggleSubmenuVisibility();
+            },
             icon: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   width: 35,
-                  alignment: Alignment.centerLeft,
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                  ),
                   child: Icon(
                     iconMap[widget.icon],
                     size: 16,
                     color: Theme.of(context).textTheme.bodyLarge?.color,
                   ),
                 ),
+                const SizedBox(width: 5),
                 Container(
-                  width: 35,
-                  alignment: Alignment.centerLeft,
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                  ),
                   child: Text(
                     widget.title,
                     style: TextStyle(
@@ -65,10 +73,6 @@ class _SideMenuIcon extends State<SideMenuIcon> {
                 ),
               ],
             ),
-            onPressed: () {
-              widget.onTap(widget.index);
-              widget.toggleSubmenuVisibility();
-            },
           ),
         ],
       ),
