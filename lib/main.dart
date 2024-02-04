@@ -63,6 +63,8 @@ void main() {
           element: Container(
             child: Text("Home"),
           ),
+          onThemeChange: (Brightness brightness) {},
+          logout: () {},
         ),
       ),
     ),

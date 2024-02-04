@@ -6,11 +6,15 @@ class SideMenuItems extends StatefulWidget {
   final bool isSubmenuVisible;
   final VoidCallback toggleSubmenuVisibility;
   final List<Map<String, Object>> listMenu;
+  final void Function(Brightness) onThemeChange;
+  final VoidCallback logout;
 
   const SideMenuItems({
     required this.isSubmenuVisible,
     required this.toggleSubmenuVisibility,
     required this.listMenu,
+    required this.onThemeChange,
+    required this.logout,
     Key? key,
   }) : super(key: key);
 
@@ -77,6 +81,8 @@ class _SideMenuItemsState extends State<SideMenuItems> {
               title: widget.listMenu[_selectedIndex!]['title'] as String,
               submenu: widget.listMenu[_selectedIndex!]['submenus']
                   as List<Map<String, Object>>,
+              ontThemeChange: widget.onThemeChange,
+              logout: widget.logout,
             ),
         ],
       ),

@@ -4,10 +4,14 @@ import 'package:widget_aside_menu/components/submenu_list.dart';
 class SubmenuWidget extends StatefulWidget {
   final String title;
   final List<Map<String, Object>> submenu;
+  final void Function(Brightness) ontThemeChange;
+  final VoidCallback logout;
 
   const SubmenuWidget({
     required this.title,
     required this.submenu,
+    required this.ontThemeChange,
+    required this.logout,
     Key? key,
   }) : super(key: key);
 
@@ -30,6 +34,8 @@ class _SubmenuWidgetState extends State<SubmenuWidget> {
       child: SubmenuList(
         title: widget.title,
         submenu: widget.submenu,
+        onThemeChange: widget.ontThemeChange,
+        logout: widget.logout,
       ),
     );
   }

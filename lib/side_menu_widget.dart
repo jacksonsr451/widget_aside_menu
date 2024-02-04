@@ -3,11 +3,15 @@ import 'package:widget_aside_menu/components/side_menu_items.dart';
 
 class SideMenuWidget extends StatefulWidget {
   final List<Map<String, Object>> menu;
+  final void Function(Brightness) onThemeChange;
+  final VoidCallback logout;
   final Widget appBar;
   final Widget element;
 
   const SideMenuWidget({
     required this.menu,
+    required this.onThemeChange,
+    required this.logout,
     required this.appBar,
     required this.element,
     Key? key,
@@ -63,6 +67,8 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                             });
                           },
                           listMenu: widget.menu,
+                          onThemeChange: widget.onThemeChange,
+                          logout: widget.logout,
                         ),
                         Expanded(
                           child: Container(

@@ -5,10 +5,14 @@ import 'package:widget_aside_menu/components/submenu_title.dart';
 class SubmenuList extends StatefulWidget {
   final String title;
   final List<Map<String, Object>> submenu;
+  final void Function(Brightness newBrightness) onThemeChange;
+  final VoidCallback logout;
 
   const SubmenuList({
     required this.title,
     required this.submenu,
+    required this.onThemeChange,
+    required this.logout,
     Key? key,
   }) : super(key: key);
 
@@ -63,7 +67,7 @@ class _SubmenuListState extends State<SubmenuList> {
           ),
         ),
         Container(
-          height: 30,
+          height: 45,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
@@ -81,6 +85,56 @@ class _SubmenuListState extends State<SubmenuList> {
                 topRight:
                     Radius.circular(_selectedIndex == _lastIndex ? 20 : 0),
               ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 5,
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Brightness newBrightness =
+                          Theme.of(context).brightness == Brightness.light
+                              ? Brightness.dark
+                              : Brightness.light;
+
+                      widget.onThemeChange(newBrightness);
+                    },
+                    icon: Container(
+                      width: 16,
+                      decoration: const BoxDecoration(
+                        color: Colors.transparent,
+                      ),
+                      child: Icon(
+                        Icons.color_lens,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 5,
+                  ),
+                  child: IconButton(
+                    onPressed: widget.logout,
+                    icon: Container(
+                      width: 16,
+                      decoration: const BoxDecoration(
+                        color: Colors.transparent,
+                      ),
+                      child: Icon(
+                        Icons.logout,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
